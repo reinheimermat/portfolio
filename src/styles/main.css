@@ -171,6 +171,10 @@ header {
   .dropdown {
     display: block;
   }
+  .container {
+    overflow: hidden;
+    flex-wrap: wrap;
+  }
   .container .home {
     padding: 15vh 5vw 0 5vw;
     align-items: center;

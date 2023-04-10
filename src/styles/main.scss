@@ -210,6 +210,8 @@ header {
     }
 
     .container {
+        overflow: hidden;
+        flex-wrap: wrap;
 
         .home {
             padding: 15vh 5vw 0 5vw;
