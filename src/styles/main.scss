@@ -200,6 +200,16 @@ header {
 
 // * Media Queries
 
+@media screen and (min-width: 300px) {
+    .container {
+        .home {
+            .home_img {
+                display: none;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 767px) {
     .nav_links {
         display: none;
