@@ -159,14 +159,65 @@ header {
   color: white;
   background-color: #121212;
   box-sizing: border-box;
-  height: 100vh;
   display: flex;
   align-items: center;
 }
 
 @media screen and (min-width: 300px) {
+  .drop_content {
+    margin-left: -2px;
+  }
+  .container {
+    overflow: hidden;
+  }
+  .container .home {
+    height: 112vh;
+    padding: 15vh 5vw 0 5vw;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20vh;
+  }
+  .container .home .home_content {
+    padding-top: 15px;
+  }
   .container .home .home_img {
-    display: none;
+    padding: 100px;
+  }
+  .container .home .home_img img {
+    width: 300px;
+    height: 300px;
+  }
+  .container .abbout {
+    padding: 10vh 5vw 0 5vw;
+    align-items: center;
+    flex-direction: column;
+  }
+  .container .abbout .abbout_content {
+    padding: 30px 0;
+  }
+  .container .abbout .abbout_content h1 {
+    color: #8257E5;
+    font-size: 1.5rem;
+  }
+  .container .abbout .abbout_content p {
+    padding: 15px 0;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+  }
+  .container .abbout .abbout_content button {
+    border-radius: 10px;
+    background-color: #8257E5;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+    color: black;
+  }
+  .container .abbout .abbout_img img {
+    width: 300px;
+    height: 300px;
+    padding-top: 350px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -180,32 +231,10 @@ header {
     overflow: hidden;
     flex-wrap: wrap;
   }
-  .container .home {
-    padding: 15vh 5vw 0 5vw;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 20vh;
-  }
-  .container .home .home_content {
-    padding: 0;
-  }
-  .container .home .home_content h1 {
-    font-size: 1.8rem;
-  }
-  .container .home .home_img {
-    padding: 5vh 5vw 0 5vw;
-  }
-  .container .home .home_img img {
-    border-radius: 100%;
-  }
-  .container .abbout {
-    padding: 10vh 5vw 0 5vw;
-    align-items: center;
-    flex-direction: column;
-  }
   .container .abbout .abbout_img img {
-    height: 350px;
-    width: 350px;
+    width: 300px;
+    height: 300px;
+    padding-top: 16px;
   }
 }
 @media screen and (min-width: 1024px) {
