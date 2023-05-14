@@ -181,14 +181,14 @@ header {
     padding-top: 15px;
   }
   .container .home .home_img {
-    padding: 100px;
+    padding: 3vh;
   }
   .container .home .home_img img {
     width: 300px;
     height: 300px;
   }
   .container .abbout {
-    padding: 10vh 5vw 0 5vw;
+    padding: 0 5vw;
     align-items: center;
     flex-direction: column;
   }
@@ -213,6 +213,9 @@ header {
     margin-right: 10px;
     font-size: 1rem;
     color: black;
+  }
+  .container .abbout .abbout_img {
+    padding: 10px;
   }
   .container .abbout .abbout_img img {
     width: 300px;

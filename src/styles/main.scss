@@ -219,7 +219,8 @@ header {
             }
 
             .home_img {
-                padding: 100px;
+                padding: 3vh;
+
                 img {
                     width: 300px;
                     height: 300px;
@@ -228,7 +229,7 @@ header {
         }
 
         .abbout {
-            padding: 10vh 5vw 0 5vw;
+            padding: 0 5vw;
             align-items: center;
             flex-direction: column;
 
@@ -259,6 +260,8 @@ header {
             }
 
             .abbout_img {
+                padding: 10px;
+
                 img {
                     width: 300px;
                     height: 300px;
