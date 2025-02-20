@@ -26,6 +26,9 @@ importers:
       astro:
         specifier: ^5.3.0
         version: 5.3.0(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.34.8)(typescript@5.7.3)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.0.0)
@@ -38,6 +41,9 @@ importers:
       tailwindcss:
         specifier: ^4.0.7
         version: 4.0.7
+      tw-merge:
+        specifier: 0.0.1-alpha.3
+        version: 0.0.1-alpha.3
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -1706,6 +1712,9 @@ packages:
 
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
+
+  tw-merge@0.0.1-alpha.3:
+    resolution: {integrity: sha512-HvuKdaUWjJKFlUa/DKDGnicPXill0bUZnzoK/BoTWn0OkKLfIrMMn97VXW6fFdArA40FeBkitWjr7SJRuaDvCg==}
 
   type-fest@4.35.0:
     resolution: {integrity: sha512-2/AwEFQDFEy30iOLjrvHDIH7e4HEWH+f1Yl1bI5XMqzuoCUqwYCdxachgsgv0og/JdVZUhbfjcJAoHj5L1753A==}
@@ -3856,6 +3865,8 @@ snapshots:
 
   tslib@2.8.1:
     optional: true
+
+  tw-merge@0.0.1-alpha.3: {}
 
   type-fest@4.35.0: {}
 
