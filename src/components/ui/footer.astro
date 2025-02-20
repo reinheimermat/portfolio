@@ -1,0 +1,40 @@
+---
+const year = new Date().getFullYear()
+
+const links = [
+  {
+    name: 'Email',
+    url: 'mailto:mreinheimer0@gmail.com',
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/reinheimermat',
+  },
+  {
+    name: 'GitHub',
+    url: 'https://github.com/reinheimermat.png',
+  },
+]
+---
+
+<footer class="px-10">
+    <div class="rounded-xl rounded-b-none text-center border border-b-0 border-zinc-200 bg-zinc-100">
+        <div class="max-w-[64rem] mx-auto pt-10 pb-12 space-y-20">
+            <p class="font-bold text-2xl">👋 Thanks for stopping by! Here is more of me if you are interested :)</p>
+            
+            <div class="grid grid-cols-2 justify-between items-end">
+                <div class="flex flex-col text-start text-sm">
+                    <p>mreinheimer0@gmail.com</p>
+                    <p>This website is best viewed on desktop</p>
+                    <p>Made with Astro JS @{year} Matheus Reinheimer </p>
+                </div>
+
+                <div class="text-sm space-x-4 text-end">
+                    {links.map((link) => (
+                        <a href={link.url} class="hover:underline">{link.name}</a>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

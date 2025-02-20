@@ -1,0 +1,46 @@
+---
+import { ArrowUpRight } from 'lucide-react'
+import { RecomendationCard } from './recomendation-card'
+
+const recomendations = [
+  {
+    name: 'Pedro Frietzen',
+    role: 'Tech Lead at Mave',
+    description:
+      'Trabalhei com Matheus e tive a oportunidade de orientá-lo. Ele é dedicado, proativo e sempre busca aprender por conta própria. Recomendo com confiança.',
+    src: 'https://media.licdn.com/dms/image/v2/D4E03AQHehdm3bIsDuw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1724788352912?e=1745452800&v=beta&t=d--GZVnFLOzMecpBEW01vL_9EYHWlYnirPLWr7szjAg',
+    alt: 'Pedro Frietzen',
+    relation: 'February 10, 2024, Pedro was my mentor',
+  },
+  {
+    name: 'Antonio Carlos',
+    role: 'Senior Front-End Developer at Projectiva',
+    description:
+      'Matheus se comunica bem e tem grande conhecimento técnico das ferramentas que utiliza.',
+    src: 'https://media.licdn.com/dms/image/v2/D4D03AQFemnDaMaFQ8w/profile-displayphoto-shrink_100_100/B4DZR1l9MxHkAY-/0/1737139672434?e=1745452800&v=beta&t=buquL6QlriWzRFUN2fAVh4xAXm7dg8-pPOwq3jQqxa8',
+    alt: 'Pedro Frietzen',
+    relation: 'Antonio work with me on the same team',
+  },
+]
+---
+
+<section class="space-y-8">
+  <h2 class="font-bold text-2xl inline-flex gap-x-2">Recomendations via
+    <a class="flex gap-1 text-[#0077B5] hover:underline" href="https://linkedin.com/in/reinheimermat" target="_blank">
+      LinkedIn {<ArrowUpRight className='size-4' />} 
+    </a>
+  </h2>
+
+  <article class="grid grid-cols-1 gap-y-6">
+    {recomendations.map((recomendation, index) => (
+      <RecomendationCard {...recomendation} />
+      <>
+          {
+            index < recomendations.length - 1 && (
+              <hr class="border-gray-200" />
+            )
+          }
+      </>
+    ))}
+  </article>
+</section>

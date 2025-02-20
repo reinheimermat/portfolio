@@ -1,5 +1,7 @@
 ---
 import Welcome from '../components/Welcome.astro'
+import Projects from '../components/home/projects.astro'
+import Recomendations from '../components/home/recomendations.astro'
 import Work from '../components/home/work.astro'
 import Layout from '../layouts/Layout.astro'
 
@@ -8,7 +10,10 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-	<Welcome />
-
-	<Work />
+	<main class="space-y-20">
+		<Welcome />
+		<Work />
+		<Projects />
+		<Recomendations />
+	</main>
 </Layout>

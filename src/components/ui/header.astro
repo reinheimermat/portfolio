@@ -1,0 +1,35 @@
+---
+import { cn } from '../../utils/cn'
+
+const currentPage = Astro.originPathname
+
+const pages = [
+  {
+    title: 'Work',
+    href: '/',
+  },
+  {
+    title: 'About',
+    href: '/about',
+  },
+  {
+    title: 'Contact',
+    href: '/contact',
+  },
+]
+---
+
+<header class="h-16 relative">
+    <div class="fixed flex items-center justify-between py-10 w-full backdrop-blur-xs px-10">
+        <a href="/" class="font-bold text-lg">
+            Matheus Reinheimer
+        </a>
+        <div class="flex items-center gap-8">
+            {pages.map((page) => (
+                <a href={page.href} class={cn('text-zinc-400', currentPage === page.href && 'font-bold text-zinc-800')}>
+                    {page.title}
+                </a>
+            ))}
+        </div>
+    </div>
+</header>
