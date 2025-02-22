@@ -1,99 +1,206 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from "../layouts/Layout.astro";
 
 const expertise = [
   {
-    area: 'Front-end Development',
+    area: "Front-end Development",
   },
   {
-    area: 'Back-end Development',
+    area: "Back-end Development",
   },
   {
-    area: 'AI & Machine Learning',
+    area: "AI for Programmers",
   },
   {
-    area: 'Framer Animation',
+    area: "Framer Motion Animation",
   },
   {
-    area: 'Ui/Ux Design',
+    area: "UI/UX Design",
   },
-]
+];
 
 const currentlyLearning = [
   {
-    skill: 'Next.js',
+    skill: "SaaS Development",
   },
   {
-    skill: 'GraphQL',
+    skill: "AI & Machine Learning",
   },
   {
-    skill: 'Swift',
+    skill: "3D Design & Blender",
   },
   {
-    skill: 'Blender',
+    skill: "Design Systems",
   },
   {
-    skill: 'Unity',
+    skill: "Astro.js",
   },
-]
+];
 
 const interests = [
   {
-    name: 'Coffee',
+    name: "Coffee",
   },
   {
-    name: 'Hip Hop Battle',
+    name: "Hip Hop Battle",
   },
   {
-    name: 'Music',
+    name: "Music",
   },
   {
-    name: 'Reading',
+    name: "Books",
   },
-]
+  {
+    name: "Movies",
+  },
+  {
+    name: "Cars",
+  },
+];
+
+const educations = [
+  {
+    title: "Graduated in Analyse and Development of Systems",
+    school: "Unisinos, Brazil",
+    description: [
+      '- Learning about web applications, clean architecture.',
+      '- Created modern back-end projects using Node.js, Fastify following patterns like OPP, SOLID, Factory Pattern, CI/CD and others.',
+      '- Created web applications like ChatBots and videos transcribe using AI technologies like Google Gemini, OpenAI and DeepSeek.'
+    ],
+    year: "March 2023 - Present",
+    src: "https://media.licdn.com/dms/image/v2/D4D0BAQGnsHZXkF4RhQ/company-logo_200_200/company-logo_200_200/0/1702659404462/universidade_do_vale_do_rio_dos_sinos_logo?e=1748476800&v=beta&t=gFjfnAnOyiBqhX0BSGWSKmskC_XhvAAMY9qe0w0MzLE",
+    techs: ["University"],
+  },
+  {
+    title: "Graduated in IT Technician for Internet",
+    school: "University of California, Los Angeles",
+    description: [
+      '- Learning about developmente of web and mobile applications.',
+      '- Developed a car rental project using PHP, HTML, CSS and Javascript.',
+      '- Developed a mobile application for a security company using Flutter.',
+      '- Developed a blog about male grooming using React, SASS and Bootrap for UI.'
+    ],
+    year: "2020 - 2022",
+    src: "https://media.licdn.com/dms/image/v2/D4D0BAQH81IumBEnF3g/company-logo_200_200/company-logo_200_200/0/1687874656090/qi_escolas_e_faculdades_logo?e=1748476800&v=beta&t=a5gn2860x-_EYNWs2c7vg0p06AINVm2dTIn5soHFI98",
+    techs: ["Technical school & University"],
+  },
+  {
+    title: "Full Stack Development & AI",
+    school: "Rocketseat, Brazil",
+    description: [
+      '- Learned about Design Patters, Clean Architecture, SOLID, CI/CD, Factory Pattern and others.',
+      '- Developed modern back-end projects using Node.js, Fastify following patterns like OPP, SOLID, Factory Pattern, CI/CD and others.',
+      '- Developed a custom ChatBot with Retrieval Augmented Generation (RAG) using Google Gemini.',
+      '- Developed a video transcribe application using DeepSeek.',
+      '- Learned about LLMs like Gemini, OpenAI and DeepSeek.'
+    ],
+    year: "2020 - 2022",
+    src: "https://media.licdn.com/dms/image/v2/D4D0BAQEFKEYZhCbjFA/company-logo_200_200/company-logo_200_200/0/1733019768288?e=1748476800&v=beta&t=dKFcCxwcrHSraTujeeFNpZHkGtYUDiO5J_0gYK9CdtU",
+    techs: ["Technology School & University"],
+  },
+  {
+    title: "English Course",
+    school: "Yazigi, Brazil",
+    description: [
+      '- Learned about conversation in English.',
+      '- Learned about English culture.',
+      '- Learned English grammar.'
+    ],
+    year: "2020 - 2022",
+    src: "https://media.licdn.com/dms/image/v2/D4D0BAQEuyG3AnsejdA/company-logo_200_200/company-logo_200_200/0/1732221913733/yazigi_oficial_logo?e=1748476800&v=beta&t=j8UxiQxfNtxsp0gkTyjeimW9u7P01zIWZtt4-NisS0k",
+    techs: ["Language School"],
+  },
+];
 ---
 
 <Layout>
-	<div class="space-y-10">
-        <section class="grid grid-cols-2">
-            <article class="space-y-6">
-                <h1 class="text-2xl font-bold">Get to know more about me</h1>
-    
-                <p class="leading-relaxed">I am a Product Designer with a strong passion for 3D and AR/VR design. I enjoy combining my artistic background with my technical skills to create innovative and creative solutions.</p>
-    
-                <p class="leading-relaxed">I have experience developing visionary concepts, conducting user research, and establishing product frameworks through the use of animated and interactive prototypes. Possessing a positive attitude and a growth-oriented mindset, I am constantly seeking opportunities to expand my knowledge and skills as a designer.</p>
-            </article>
-            <article>
-                <h1>sdsdfs</h1>
-            </article>
-        </section>
+  <div class="space-y-10">
+    <section class="grid grid-cols-2">
+      <article class="space-y-6">
+        <h1 class="text-3xl font-bold">Get to know more about me</h1>
 
-        <section class="grid grid-cols-3">
-            <aside class="space-y-4">
-              <strong class="block">🖥️ Areas of expertise</strong>
-              
-              <div>
-                  {expertise.map((area) => (
-                  <p>{area.area}</p>
-                  ))}
+        <p class="leading-relaxed">
+          I am a Full Stack Developer with a strong passion for Front-end 
+          engineering. I enjoy combining my creative side with my technical 
+          skills to create innovative and creative softwares.
+        </p>
+
+        <p class="leading-relaxed">
+          I have experience developing moderns web applications using
+          technologies like Node.js, Fastify, React.js, Next.js, Framer Motion,
+          Tailwind CSS, and others. Possessing a positive attitude and a
+          growth-oriented mindset, I am constantly seeking opportunities to
+          expand my knowledge and skills as a developer.
+        </p>
+      </article>
+      <article>
+        <h1>Photo</h1>
+      </article>
+    </section>
+
+    <section class="grid grid-cols-3">
+      <aside class="space-y-4">
+        <strong class="block text-lg">🖥️ Areas of expertise</strong>
+
+        <div>
+          {expertise.map((area) => <p>{area.area}</p>)}
+        </div>
+      </aside>
+      <aside class="space-y-4">
+        <strong class="block text-lg">👩‍💻 Currently learning</strong>
+        <div>
+          {currentlyLearning.map((learning) => <p>{learning.skill}</p>)}
+        </div>
+      </aside>
+      <aside class="space-y-4">
+        <strong class="block text-lg">☕ Personal interests</strong>
+        <div>
+          {interests.map((interest) => <p>{interest.name}</p>)}
+        </div>
+      </aside>
+    </section>
+
+    <section class="space-y-8">
+      <strong class="block text-lg">👩‍💻 Education</strong>
+
+      <article class="grid grid-cols-1 gap-6">
+        {
+          educations.map((education, index) => (
+            <div class="flex gap-2">
+              <img src={education.src} alt={""} class="rounded-full size-12" />
+
+              <div class="space-y-3">
+                <div class="space-y-1">
+                  <div>
+                    <h2 class="font-bold">{education.title}</h2>
+                    <p class="text-sm text-zinc-700">{education.school} · {education.year}</p>
+                  </div>
+                  
+                  <div class="flex items-center gap-2">
+                    {education.techs?.map((tech) => (
+                      <span class="text-xs py-0.5 px-2 bg-sky-200/50 rounded-full w-fit">
+                        {tech}
+                      </span>
+                    ))
+
+                    }
+                  </div>
+                </div>
+                {education.description.map((desc) => (
+                  <p class="text-sm">{desc}</p>
+                ))}
               </div>
-            </aside>
-            <aside class="space-y-4">
-              <strong class="block">👩‍💻 Currently learning</strong>
-              <div>
-                  {currentlyLearning.map((learning) => (
-                  <p>{learning.skill}</p>
-                  ))}
-              </div>
-            </aside>
-            <aside class="space-y-4">
-              <strong class="block">☕ Personal interests</strong>
-              <div>
-                  {interests.map((interest) => (
-                  <p>{interest.name}</p>
-                  ))}
-              </div>
-            </aside>
-        </section>
-    </div>
+            </div>
+            <>
+              {
+                index < educations.length - 1 && (
+                  <hr class="border-gray-200" />
+                )
+              }
+            </>
+          ))
+        }
+      </article>
+    </section>
+  </div>
 </Layout>

@@ -1,50 +1,40 @@
 ---
-import { Card } from '../ui/card'
+import { Card } from "../ui/card";
+
+const work = [
+	{
+		title: "Front-end Development",
+		subtitle: "Get started with Astro",
+		description: "Welcome to Astro",
+		src: "../../../gremio.png",
+	},
+	{
+		title: "Front-end Development",
+		subtitle: "Mave",
+		description:
+			"Developed new features on soccer websites like Grêmio FBPA.",
+		src: "../../../gremio.png",
+	},
+];
 ---
 
 <section class="space-y-8">
-    <h2 class="font-bold text-2xl">Selected Work</h2>
+	<h2 class="font-bold text-2xl">Selected Work</h2>
 
 	<article class="grid md:grid-cols-2 gap-x-6 gap-y-10">
-		<Card.Root>
-			<img src="../../cover.png" alt="" class="rounded-xl">
-			<Card.Container>
-				<div>
-					<Card.Title>Welcome to Astro</Card.Title>
-					<Card.Subtitle>Get started with Astro</Card.Subtitle>
-				</div>
-				<Card.Description>Welcome to Astro</Card.Description>
-			</Card.Container>
-		</Card.Root>
-		<Card.Root>
-			<img src="../../cover.png" alt="" class="rounded-xl">
-			<Card.Container>
-				<div>
-					<Card.Title>Welcome to Astro</Card.Title>
-					<Card.Subtitle>Get started with Astro</Card.Subtitle>
-				</div>
-				<Card.Description>Welcome to Astro</Card.Description>
-			</Card.Container>
-		</Card.Root>
-		<Card.Root>
-			<img src="../../cover.png" alt="" class="rounded-xl">
-			<Card.Container>
-				<div>
-					<Card.Title>Welcome to Astro</Card.Title>
-					<Card.Subtitle>Get started with Astro</Card.Subtitle>
-				</div>
-				<Card.Description>Welcome to Astro</Card.Description>
-			</Card.Container>
-		</Card.Root>
-		<Card.Root>
-			<img src="../../cover.png" alt="" class="rounded-xl">
-			<Card.Container>
-				<div>
-					<Card.Title>Welcome to Astro</Card.Title>
-					<Card.Subtitle>Get started with Astro</Card.Subtitle>
-				</div>
-				<Card.Description>Welcome to Astro</Card.Description>
-			</Card.Container>
-		</Card.Root>
-	</article>  
+		{
+			work.map((job) => (
+				<Card.Root>
+					<img src={job.src} alt="" class="rounded-xl" />
+					<Card.Container>
+						<div class="space-y-1">
+							<Card.Title>{job.title}</Card.Title>
+							<Card.Subtitle>{job.subtitle}</Card.Subtitle>
+						</div>
+						<Card.Description>{job.description}</Card.Description>
+					</Card.Container>
+				</Card.Root>
+			))
+		}
+	</article>
 </section>
