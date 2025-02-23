@@ -1,21 +1,27 @@
 ---
+import { Image } from "astro:assets";
+import gremio from "../../../public/gremio.png";
 import { Card } from "../ui/card";
 
 const work = [
 	{
 		title: "Front-end Development",
-		subtitle: "Get started with Astro",
+		subtitle: "Projectiva",
 		description: "Welcome to Astro",
-		src: "../../../gremio.png",
+		src: gremio,
 	},
 	{
 		title: "Front-end Development",
 		subtitle: "Mave",
 		description:
 			"Developed new features on soccer websites like Grêmio FBPA.",
-		src: "../../../gremio.png",
+		src: gremio,
 	},
 ];
+
+const formatHref = (title: string) => {
+	return title.toLowerCase();
+};
 ---
 
 <section class="space-y-8">
@@ -25,7 +31,16 @@ const work = [
 		{
 			work.map((job) => (
 				<Card.Root>
-					<img src={job.src} alt="" class="rounded-xl" />
+					<a href={`/work/${formatHref(job.subtitle)}`} class="block">
+						<Image
+							src={job.src}
+							alt=""
+							class="rounded-xl w-full"
+							width={500}
+							height={400}
+							transition:name={`image-${formatHref(job.subtitle)}`}
+						/>
+					</a>
 					<Card.Container>
 						<div class="space-y-1">
 							<Card.Title>{job.title}</Card.Title>

@@ -1,0 +1,176 @@
+---
+import { Image } from "astro:assets";
+import gremio from "../../../public/gremio.png";
+import acbf from "../../assets/work/acbf.png";
+import envidro from "../../assets/work/envidro.png";
+import gremionet from "../../assets/work/gremionet.png";
+import Container from "../../components/ui/container.astro";
+import H2 from "../../components/ui/h2.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+    <div class="space-y-20">
+        <figure>
+            <Image
+                src={gremio}
+                alt=""
+                class="w-screen h-[39.25rem] object-cover pointer-events-none"
+                width={1200}
+                height={400}
+                transition:name={"image-mave"}
+            />
+        </figure>
+        <section>
+            <Container class="space-y-20">
+                <header class="space-y-4">
+                    <H2>My first experience</H2>
+                    <p>
+                        As a front-end developer, I had the opportunity to work
+                        on projects that involved the development of websites
+                        and web applications. I worked with technologies such as
+                        HTML, CSS, JavaScript, and React. I also had the
+                        opportunity to work with design tools like Figma and
+                        Adobe XD.
+                    </p>
+                </header>
+                <article class="flex justify-between">
+                    <div>
+                        <strong>Enterprise</strong>
+                        <p>Mave Tecnologia</p>
+                    </div>
+                    <div>
+                        <strong>projects</strong>
+                        <p>Food Totem Delopment</p>
+                        <p>Soccer website UI/UX</p>
+                        <p>Landing Page Development</p>
+                        <p>Websites Refactoring</p>
+                    </div>
+                    <div>
+                        <strong>Timeline</strong>
+                        <p>Nov 2023 (7 weeks)</p>
+                    </div>
+                    <div>
+                        <strong>Techs Used </strong>
+                        <p>React.js, Typescript, Tailwind</p>
+                        <p>Next.js, Git, Javascript, HTML, CSS</p>
+                    </div>
+                </article>
+            </Container>
+        </section>
+        <section class="bg-zinc-100 py-10">
+            <Container class="space-y-8">
+                <header class="space-y-4">
+                    <h3 class="text-violet-700">Overview</h3>
+                    <H2>My Role</H2>
+                </header>
+                <main>
+                    I was responsible for implements new features, refactor
+                    legacy code, and create new components. I also worked on
+                    improving the user experience and user interface of the
+                    applications. I worked closely with the design team to
+                    ensure that the applications were developed according to the
+                    design specifications.
+                </main>
+                <footer class="space-y-4">
+                    <H2> Workflow </H2>
+
+                    <img
+                        src="../../../public/work.png"
+                        alt="Workflow diagram"
+                        class="block pointer-events-none"
+                    />
+                </footer>
+            </Container>
+        </section>
+
+        <section>
+            <Container class="space-y-8">
+                <header>
+                    <H2>Some Projects</H2>
+                </header>
+                <figure class="grid grid-cols-3 gap-4">
+                    <Image
+                        src={gremionet}
+                        alt=""
+                        class="rounded-md rounded-tl-2xl rounded-br-2xl pointer-events-none"
+                    />
+                    <Image
+                        src={acbf}
+                        alt=""
+                        class="rounded-md rounded-tr-2xl rounded-bl-2xl pointer-events-none"
+                    />
+                    <Image
+                        src={envidro}
+                        alt=""
+                        class="rounded-md rounded-tl-2xl rounded-br-2xl pointer-events-none"
+                    />
+                </figure>
+            </Container>
+        </section>
+
+        <section class="bg-zinc-100 py-10">
+            <Container class="space-y-8">
+                <header class="space-y-4">
+                    <h3 class="text-violet-700">Challenges</h3>
+                    <H2>How I highlighted?</H2>
+                </header>
+                <main class="space-y-4">
+                    <p>
+                        One of the biggest challenges I faced was working with
+                        legacy code. The codebase was not well-structured, and
+                        there were many bugs and performance issues. I had to
+                        refactor the code and implement new features while
+                        ensuring that the applications remained stable and
+                        performant. I also had to work with tight deadlines and
+                        changing requirements, which required me to be flexible
+                        and adaptable.
+                    </p>
+
+                    <p>
+                        I refactored the codade, implemented components add
+                        React JS and Typescript, and improved the user
+                        experience and user interface of the applications. I
+                        also implemented Tailwind CSS, refactored the design
+                        system folowing the Figma design.
+                    </p>
+                </main>
+                <footer class="space-y-4">
+                    <H2> Highlight </H2>
+
+                    <p>
+                        I believe that was in constantly learning I could stand
+                        out compared to the team that was more relaxed and not
+                        so interested in learning new technologies and
+                        methodologies.
+                    </p>
+
+                    <p>
+                        I also believe that my ability to work under pressure
+                        and meet tight deadlines helped me to stand out. I was
+                        able to deliver high-quality work on time and within
+                        budget, which impressed my team and my managers.
+                    </p>
+                </footer>
+            </Container>
+        </section>
+
+        <section>
+            <Container class="space-y-8">
+                <header class="space-y-4">
+                    <h3 class="text-violet-700">Reflection</h3>
+                    <H2>Growth</H2>
+                </header>
+                <main>
+                    Working at Mave Tecnologia was a great learning experience
+                    for me. I had the opportunity to work on a variety of
+                    projects and technologies like React.js and Next.js, which
+                    helped me to improve my skills and knowledge. I learned how
+                    to work with legacy code, refactor code, and implement new
+                    features. I also learned how to work with design tools like
+                    Figma, which helped me to improve my design skills.
+                </main>
+            </Container>
+        </section>
+    </div>
+</Layout>
