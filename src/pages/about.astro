@@ -174,12 +174,12 @@ const educations = [
                 <div class="space-y-1">
                   <div>
                     <h2 class="font-bold">{education.title}</h2>
-                    <p class="text-sm text-zinc-700">{education.school} · {education.year}</p>
+                    <p class="text-sm text-zinc-700 dark:text-zinc-300">{education.school} · {education.year}</p>
                   </div>
                   
                   <div class="flex items-center gap-2">
                     {education.techs?.map((tech) => (
-                      <span class="text-xs py-0.5 px-2 bg-sky-200/50 rounded-full w-fit">
+                      <span class="text-xs py-0.5 px-2 bg-sky-200/50 dark:bg-sky-200 dark:text-zinc-950 rounded-full w-fit">
                         {tech}
                       </span>
                     ))
@@ -195,7 +195,7 @@ const educations = [
             <>
               {
                 index < educations.length - 1 && (
-                  <hr class="border-gray-200" />
+                  <hr class="border-zinc-200 dark:border-zinc-800" />
                 )
               }
             </>
