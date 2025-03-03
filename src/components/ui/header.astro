@@ -1,4 +1,5 @@
 ---
+import { ArrowUpRight } from "lucide-react";
 import { cn } from "../../utils/cn";
 
 const currentPage = Astro.originPathname;
@@ -13,8 +14,8 @@ const pages = [
     href: "/about",
   },
   {
-    title: "Contact",
-    href: "/contact",
+    title: "Resume",
+    href: "https://docs.google.com/viewerng/viewer?url=https://matheusreinheimer.vercel.app/resume.pdf",
   },
 ];
 ---
@@ -30,11 +31,13 @@ const pages = [
           <a
             href={page.href}
             class={cn(
-              "text-zinc-400",
+              "text-zinc-400 flex gap-2 hover:underline hover:underline-offset-4",
               currentPage === page.href && "font-bold text-zinc-800",
             )}
+            target={page.href.startsWith("http") ? "_blank" : "_self"}
           >
             {page.title}
+            {page.href.startsWith("http") && <ArrowUpRight size={16} />}
           </a>
         ))
       }
