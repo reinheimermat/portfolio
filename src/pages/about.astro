@@ -1,117 +1,117 @@
 ---
-import Container from "../components/ui/container.astro";
-import Layout from "../layouts/Layout.astro";
+import Container from '../components/ui/container.astro'
+import Layout from '../layouts/Layout.astro'
 
 const expertise = [
   {
-    area: "Front-end Development",
+    area: 'Front-end Development',
   },
   {
-    area: "Back-end Development",
+    area: 'Back-end Development',
   },
   {
-    area: "AI for Programmers",
+    area: 'AI for Programmers',
   },
   {
-    area: "Framer Motion Animation",
+    area: 'Framer Motion Animation',
   },
   {
-    area: "UI/UX Design",
+    area: 'UI/UX Design',
   },
-];
+]
 
 const currentlyLearning = [
   {
-    skill: "SaaS Development",
+    skill: 'SaaS Development',
   },
   {
-    skill: "AI & Machine Learning",
+    skill: 'AI & Machine Learning',
   },
   {
-    skill: "3D Design & Blender",
+    skill: '3D Design & Blender',
   },
   {
-    skill: "Design Systems",
+    skill: 'Design Systems',
   },
   {
-    skill: "Astro.js",
+    skill: 'Astro.js',
   },
-];
+]
 
 const interests = [
   {
-    name: "Coffee",
+    name: 'Coffee',
   },
   {
-    name: "Hip Hop Battle",
+    name: 'Hip Hop Battle',
   },
   {
-    name: "Music",
+    name: 'Music',
   },
   {
-    name: "Books",
+    name: 'Books',
   },
   {
-    name: "Movies",
+    name: 'Movies',
   },
   {
-    name: "Cars",
+    name: 'Cars',
   },
-];
+]
 
 const educations = [
   {
-    title: "Graduated in Analyse and Development of Systems",
-    school: "Unisinos, Brazil",
+    title: 'Graduated in Analyse and Development of Systems',
+    school: 'Unisinos, Brazil',
     description: [
       '- Learning about web applications, clean architecture.',
       '- Created modern back-end projects using Node.js, Fastify following patterns like OPP, SOLID, Factory Pattern, CI/CD and others.',
-      '- Created web applications like ChatBots and videos transcribe using AI technologies like Google Gemini, OpenAI and DeepSeek.'
+      '- Created web applications like ChatBots and videos transcribe using AI technologies like Google Gemini, OpenAI and DeepSeek.',
     ],
-    year: "March 2023 - Present",
-    src: "https://media.licdn.com/dms/image/v2/D4D0BAQGnsHZXkF4RhQ/company-logo_200_200/company-logo_200_200/0/1702659404462/universidade_do_vale_do_rio_dos_sinos_logo?e=1748476800&v=beta&t=gFjfnAnOyiBqhX0BSGWSKmskC_XhvAAMY9qe0w0MzLE",
-    techs: ["University"],
+    year: 'March 2023 - Present',
+    src: 'https://media.licdn.com/dms/image/v2/D4D0BAQGnsHZXkF4RhQ/company-logo_200_200/company-logo_200_200/0/1702659404462/universidade_do_vale_do_rio_dos_sinos_logo?e=1748476800&v=beta&t=gFjfnAnOyiBqhX0BSGWSKmskC_XhvAAMY9qe0w0MzLE',
+    techs: ['University'],
   },
   {
-    title: "Graduated in IT Technician for Internet",
-    school: "University of California, Los Angeles",
+    title: 'Graduated in IT Technician for Internet',
+    school: 'University of California, Los Angeles',
     description: [
       '- Learning about developmente of web and mobile applications.',
       '- Developed a car rental project using PHP, HTML, CSS and Javascript.',
       '- Developed a mobile application for a security company using Flutter.',
-      '- Developed a blog about male grooming using React, SASS and Bootrap for UI.'
+      '- Developed a blog about male grooming using React, SASS and Bootrap for UI.',
     ],
-    year: "2020 - 2022",
-    src: "https://media.licdn.com/dms/image/v2/D4D0BAQH81IumBEnF3g/company-logo_200_200/company-logo_200_200/0/1687874656090/qi_escolas_e_faculdades_logo?e=1748476800&v=beta&t=a5gn2860x-_EYNWs2c7vg0p06AINVm2dTIn5soHFI98",
-    techs: ["Technical school & University"],
+    year: '2020 - 2022',
+    src: 'https://media.licdn.com/dms/image/v2/D4D0BAQH81IumBEnF3g/company-logo_200_200/company-logo_200_200/0/1687874656090/qi_escolas_e_faculdades_logo?e=1748476800&v=beta&t=a5gn2860x-_EYNWs2c7vg0p06AINVm2dTIn5soHFI98',
+    techs: ['Technical school & University'],
   },
   {
-    title: "Full Stack Development & AI",
-    school: "Rocketseat, Brazil",
+    title: 'Full Stack Development & AI',
+    school: 'Rocketseat, Brazil',
     description: [
       '- Learned about Design Patters, Clean Architecture, SOLID, CI/CD, Factory Pattern and others.',
       '- Developed modern back-end projects using Node.js, Fastify following patterns like OPP, SOLID, Factory Pattern, CI/CD and others.',
       '- Developed a custom ChatBot with Retrieval Augmented Generation (RAG) using Google Gemini.',
       '- Developed a video transcribe application using DeepSeek.',
-      '- Learned about LLMs like Gemini, OpenAI and DeepSeek.'
+      '- Learned about LLMs like Gemini, OpenAI and DeepSeek.',
     ],
-    year: "2020 - 2022",
-    src: "https://media.licdn.com/dms/image/v2/D4D0BAQEFKEYZhCbjFA/company-logo_200_200/company-logo_200_200/0/1733019768288?e=1748476800&v=beta&t=dKFcCxwcrHSraTujeeFNpZHkGtYUDiO5J_0gYK9CdtU",
-    techs: ["Technology School & University"],
+    year: '2020 - 2022',
+    src: 'https://media.licdn.com/dms/image/v2/D4D0BAQEFKEYZhCbjFA/company-logo_200_200/company-logo_200_200/0/1733019768288?e=1748476800&v=beta&t=dKFcCxwcrHSraTujeeFNpZHkGtYUDiO5J_0gYK9CdtU',
+    techs: ['Technology School & University'],
   },
   {
-    title: "English Course",
-    school: "Yazigi, Brazil",
+    title: 'English Course',
+    school: 'Yazigi, Brazil',
     description: [
       '- Learned about conversation in English.',
       '- Learned about English culture.',
-      '- Learned English grammar.'
+      '- Learned English grammar.',
     ],
-    year: "2020 - 2022",
-    src: "https://media.licdn.com/dms/image/v2/D4D0BAQEuyG3AnsejdA/company-logo_200_200/company-logo_200_200/0/1732221913733/yazigi_oficial_logo?e=1748476800&v=beta&t=j8UxiQxfNtxsp0gkTyjeimW9u7P01zIWZtt4-NisS0k",
-    techs: ["Language School"],
+    year: '2020 - 2022',
+    src: 'https://media.licdn.com/dms/image/v2/D4D0BAQEuyG3AnsejdA/company-logo_200_200/company-logo_200_200/0/1732221913733/yazigi_oficial_logo?e=1748476800&v=beta&t=j8UxiQxfNtxsp0gkTyjeimW9u7P01zIWZtt4-NisS0k',
+    techs: ['Language School'],
   },
-];
+]
 ---
 
 <Layout>

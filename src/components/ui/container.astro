@@ -1,11 +1,11 @@
 ---
-import { cn } from "../../utils/cn";
+import { cn } from '../../utils/cn'
 
 interface Props {
-    class?: string;
+  class?: string
 }
 
-const props = Astro.props;
+const props = Astro.props
 ---
 
 <div class={cn("container mx-auto max-w-[64rem] px-4", props.class)}>

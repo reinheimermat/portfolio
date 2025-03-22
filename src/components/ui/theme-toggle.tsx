@@ -1,37 +1,37 @@
-import { Moon, Sun } from "lucide-react";
-import * as React from "react";
+import { Moon, Sun } from 'lucide-react'
+import * as React from 'react'
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu'
 
 export function ThemeToggle() {
   const [theme, setThemeState] = React.useState<
-    "theme-light" | "dark" | "system"
+    'theme-light' | 'dark' | 'system'
   >(() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme") as "theme-light" | "dark" | "system";
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme') as 'theme-light' | 'dark' | 'system'
     }
-    return "theme-light";
-  });
+    return 'theme-light'
+  })
 
   React.useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    setThemeState(isDarkMode ? "dark" : "theme-light");
-  }, []);
+    const isDarkMode = document.documentElement.classList.contains('dark')
+    setThemeState(isDarkMode ? 'dark' : 'theme-light')
+  }, [])
 
   React.useEffect(() => {
     const isDark =
-      theme === "dark" ||
-      (theme === "system" &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+      theme === 'dark' ||
+      (theme === 'system' &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
+    localStorage.setItem('theme', theme)
+  }, [theme])
 
   return (
     <DropdownMenu>
@@ -47,16 +47,16 @@ export function ThemeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className=" dark:bg-zinc-900">
-        <DropdownMenuItem onClick={() => setThemeState("theme-light")}>
+        <DropdownMenuItem onClick={() => setThemeState('theme-light')}>
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setThemeState("dark")}>
+        <DropdownMenuItem onClick={() => setThemeState('dark')}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setThemeState("system")}>
+        <DropdownMenuItem onClick={() => setThemeState('system')}>
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }
