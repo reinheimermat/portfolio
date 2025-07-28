@@ -36,7 +36,7 @@ function CardSubtitle({
   ...props
 }: CardProps<HTMLHeadingElement>) {
   return (
-    <h4 className={cn('block text-sm text-zinc-400', className)} {...props}>
+    <h4 className={cn('block text-sm text-zinc-500', className)} {...props}>
       {children}
     </h4>
   )

@@ -1,0 +1,51 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import bannerProjectiva from "../../../public/banner-projectiva.jpg";
+import Container from "@/components/ui/container.astro";
+import { Dot } from "lucide-react";
+---
+
+<Layout>
+  <div class="space-y-10">
+    <figure>
+      <Image
+        src={bannerProjectiva}
+        alt=""
+        class="w-screen h-[39.25rem] object-cover pointer-events-none"
+        width={1420}
+        height={616}
+        transition:name={"image-projectiva"}
+      />
+    </figure>
+    <Container>
+      <div class="space-y-6">
+        <h2 class="font-bold text-xl">
+          Desenvolvedor Front-end - Projectiva Holding
+        </h2>
+        <p>
+          Atuando como desenvolvedor front-end na Projectiva Holding, tenho
+          contribuído para o desenvolvimento de interfaces de usuário modernas e
+          responsivas. Minha experiência inclui o uso de tecnologias como React,
+          TypeScript e Tailwind CSS para criar aplicações web de alta qualidade.
+        </p>
+      </div>
+    </Container>
+    <section class="bg-zinc-800 text-white">
+      <Container class="py-10 space-y-4">
+        <h2 class="text-xl">Meu Impacto</h2>
+        <div>
+          <p class="flex items-center">
+            - Contribuí para o desenvolvimento de aplicações web
+          </p>
+          <p class="flex items-center">
+            - Contribuí para o desenvolvimento de aplicações web
+          </p>
+          <p class="flex items-center">
+            - Contribuí para o desenvolvimento de aplicações web
+          </p>
+        </div>
+      </Container>
+    </section>
+  </div>
+</Layout>
