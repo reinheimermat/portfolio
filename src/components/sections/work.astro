@@ -1,0 +1,185 @@
+---
+import { Image } from 'astro:assets'
+import mave from '../../../public/mave-cover.jpg'
+import projectiva from '../../../public/projectiva-cover.jpg'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import { Card } from '../ui/card'
+import ReactIcon from '@/components/icons/react-icon'
+import TypeScriptIcon from '@/components/icons/typescript-icon'
+import NextjsIcon from '@/components/icons/next-js-icon'
+import NodeIcon from '@/components/icons/node-icon'
+import ShadCnIcon from '@/components/icons/shadcn-icon'
+import JavaScriptIcon from '@/components/icons/javascript-icon'
+import RadixUI from '@/components/icons/radix-ui-icon'
+import { Badge } from '../ui/badge'
+import H2 from '../ui/h2.astro'
+import minBlog from '../../../public/minblog-cover.jpg'
+import RailsIcon from '../icons/rails-icon'
+import RubyIcon from '../icons/ruby-icon'
+import RSpecIcon from '../icons/rspec-icon'
+import n8NCover from '../../../public/n8n-cover.jpg'
+import N8NIcon from '../icons/n8n-icon'
+import RedisIcon from '../icons/redis-icon'
+import GeminiIcon from '../icons/gemini-icon'
+
+const formatHref = (title: string) => {
+  return title.toLowerCase()
+}
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const work = [
+  {
+    title: t('work.role'),
+    subtitle: 'Projectiva Holding',
+    label: 'Projectiva',
+    src: projectiva,
+    techs: [
+      {
+        name: 'React.js',
+        icon: ReactIcon,
+      },
+      {
+        name: 'TypeScript',
+        icon: TypeScriptIcon,
+      },
+      {
+        name: 'Next.js',
+        icon: NextjsIcon,
+      },
+      {
+        name: 'Node.js',
+        icon: NodeIcon,
+      },
+      {
+        name: 'JavaScript',
+        icon: JavaScriptIcon,
+      },
+      {
+        name: 'ShadCn UI',
+        icon: ShadCnIcon,
+      },
+      {
+        name: 'Radix UI',
+        icon: RadixUI,
+      },
+    ],
+  },
+  {
+    title: t('work.role'),
+    subtitle: 'Mave Tecnologia',
+    label: 'Mave',
+    src: mave,
+    techs: [
+      {
+        name: 'React.js',
+        icon: ReactIcon,
+      },
+      {
+        name: 'TypeScript',
+        icon: TypeScriptIcon,
+      },
+      {
+        name: 'Next.js',
+        icon: NextjsIcon,
+      },
+      {
+        name: 'Node.js',
+        icon: NodeIcon,
+      },
+      {
+        name: 'ShadCn UI',
+        icon: ShadCnIcon,
+      },
+    ],
+  },
+  {
+    title: 'Min Blog API',
+    subtitle: 'Back-end project',
+    label: 'min-blog-api',
+    src: minBlog,
+    techs: [
+      {
+        name: 'Ruby',
+        icon: RubyIcon,
+      },
+      {
+        name: 'Ruby on Rails',
+        icon: RailsIcon,
+      },
+      {
+        name: 'RSpec',
+        icon: RSpecIcon,
+      },
+    ],
+  },
+  {
+    title: 'Barbershop AI Agent',
+    subtitle: 'AI Agent Development',
+    label: 'barbershop-ai-agent',
+    src: n8NCover,
+    techs: [
+      {
+        name: 'N8N',
+        icon: N8NIcon,
+      },
+      {
+        name: 'Redis',
+        icon: RedisIcon,
+      },
+      {
+        name: 'Google Gemini',
+        icon: GeminiIcon,
+      },
+      {
+        name: 'JavaScript',
+        icon: JavaScriptIcon,
+      },
+    ],
+  },
+]
+---
+
+<section class="space-y-8">
+  <H2>
+    {t('experience.title')}
+  </H2>
+
+  <article class="grid gap-x-6 gap-y-10 md:grid-cols-2">
+    {
+      work.map((job) => (
+        <Card.Root>
+          <a href={`/${lang}/work/${formatHref(job.label)}`} class="block">
+            <Image
+              src={job.src}
+              alt={job.title}
+              class="aspect-video w-full rounded-xl object-cover"
+              width={500}
+              height={400}
+              transition:name={`image-${formatHref(job.label)}`}
+            />
+          </a>
+          <Card.Container>
+            <div class="space-y-4">
+              <div class="space-y-1">
+                <Card.Title>{job.title}</Card.Title>
+                <Card.Subtitle>{job.subtitle}</Card.Subtitle>
+              </div>
+              {job.techs && (
+                <div class="flex w-[90%] flex-wrap items-center gap-2">
+                  {job.techs.map((tech) => (
+                    <Badge variant="outline" key={tech.name}>
+                      <tech.icon />
+                      {tech.name}
+                    </Badge>
+                  ))}
+                </div>
+              )}
+            </div>
+          </Card.Container>
+        </Card.Root>
+      ))
+    }
+  </article>
+</section>

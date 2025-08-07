@@ -1,0 +1,51 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import EducationCard from '../education-card.astro';
+import H2 from '../ui/h2.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const recomendations = [
+  {
+    name: t('education.puc.name'),
+    role:  t('education.puc.role'),
+    description: t('education.puc.duration'),
+    src: '../../../pucrs.jpg',
+    alt: t('education.puc.name'),
+  },
+  {
+    name: t('education.rocket.name'),
+    role: t('education.rocket.role'),
+    description: t('education.rocket.duration'),
+    src: '../../../rocketseat.jpg',
+    alt: t('education.rocket.name'),
+  },
+  {
+    name: t('education.qi.name'),
+    role: t('education.qi.role'),
+    description: t('education.qi.duration'),
+    src: '../../../qi.jpg',
+    alt: t('education.qi.name'),
+  },
+]
+---
+
+<section class="space-y-8">
+  <H2>
+    {t("education.title")}
+  </H2>
+
+  <article class="grid grid-cols-1 gap-y-6">
+    {recomendations.map((recomendation, index) => (
+      <EducationCard {...recomendation} />
+      <>
+          {
+            index < recomendations.length - 1 && (
+              <hr class="border-zinc-200 dark:border-zinc-800" />
+            )
+          }
+      </>
+    ))}
+  </article>
+</section>

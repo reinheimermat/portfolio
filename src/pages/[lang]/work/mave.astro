@@ -1,0 +1,196 @@
+---
+import { Image } from 'astro:assets'
+import bannerProjectiva from '../../../../public/banner-projectiva.jpg'
+import bannerMave from '../../../../public/banner-mave.jpg'
+import Container from '../../../components/container.astro'
+import Layout from '../../../layouts/Layout.astro'
+import H2 from '../../../components/ui/h2.astro'
+import ToolsCard from '@/components/tools-card.astro'
+import NextjsIcon from '@/components/icons/next-js-icon'
+import TypeScriptIcon from '@/components/icons/typescript-icon'
+import TailwindIcon from '@/components/icons/tailwind-icon'
+import HookFormIcon from '@/components/icons/hookform-icon'
+import ZodIcon from '@/components/icons/zod-icons'
+import JavaScriptIcon from '@/components/icons/javascript-icon'
+import VitestIcon from '@/components/icons/vitest-icon'
+import PlaywrightIcon from '@/components/icons/play-wright-icon'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import { Dot } from 'lucide-react'
+import maveImage1 from '../../../../public/mave-kart.jpg'
+import MaveIcon from '../../../../public/mave-icon.tsx'
+import { LinkPreview } from '@/components/ui/link-preview'
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'pt_br' } },
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+  ]
+}
+
+const tools = [
+  {
+    name: 'Next.js',
+    icon: NextjsIcon,
+  },
+  {
+    name: 'TypeScript',
+    icon: TypeScriptIcon,
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: TailwindIcon,
+  },
+  {
+    name: 'Hook Form',
+    icon: HookFormIcon,
+  },
+  {
+    name: 'Zod',
+    icon: ZodIcon,
+  },
+  {
+    name: 'JavaScript',
+    icon: JavaScriptIcon,
+  },
+  {
+    name: 'Vitest',
+    icon: VitestIcon,
+  },
+  {
+    name: 'Playwright',
+    icon: PlaywrightIcon,
+  },
+]
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const impacts = [
+  t('mave.impact_1'),
+  t('mave.impact_2'),
+  t('mave.impact_3'),
+  t('mave.impact_4'),
+  t('mave.impact_5'),
+]
+
+const learnings = [
+  t('mave.learning_1'),
+  t('mave.learning_2'),
+  t('mave.learning_3'),
+  t('mave.learning_4'),
+  t('mave.learning_5'),
+]
+---
+
+<Layout>
+  <div class="my-24">
+    <div
+      class="relative aspect-square w-full bg-zinc-100 md:aspect-video xl:aspect-auto xl:h-[39.25rem] dark:bg-zinc-800/30"
+      transition:name={'image-mave'}
+    >
+      <div class="absolute inset-0 flex items-center justify-center">
+        <MaveIcon />
+      </div>
+    </div>
+
+    <Container class="my-10 space-y-10">
+      <div class="space-y-6">
+        <h2 class="font-serif text-xl font-bold">
+          {t('mave.title')}
+        </h2>
+        <div class="space-y-2 md:pe-10">
+          <p>
+            {t('mave.desc_p1')}
+          </p>
+          <p>
+            {t('mave.desc_p2')}
+          </p>
+        </div>
+      </div>
+      <div
+        class="grid grid-cols-2 items-start justify-between gap-6 md:flex md:gap-0"
+      >
+        <div>
+          <strong>{t('work.position')}</strong>
+          <p>{t('work.role')}</p>
+        </div>
+        <div class="w-fit">
+          <strong>{t('work.projects')}</strong>
+          <p>
+            Gremio Website <br /> Mave Website <br /> ACBF Website
+          </p>
+        </div>
+        <div>
+          <strong>{t('work.timeline')}</strong>
+          <p>
+            {t('mave.start')} - {t('mave.end')}
+            <br />
+            {t('mave.time')}
+          </p>
+        </div>
+        <div>
+          <strong>{t('work.level')}</strong>
+          <p>
+            {t('mave.level')}
+          </p>
+        </div>
+      </div>
+    </Container>
+
+    <section class="bg-zinc-800 text-zinc-100 dark:bg-zinc-700">
+      <Container class="space-y-8 py-10">
+        <H2>My Impact</H2>
+        <div class="grid grid-cols-[40px_1fr] items-center gap-y-4">
+          {
+            impacts.map((impact) => (
+              <>
+                <Dot size={32} className="text-red-500" />
+                <div>{impact}</div>
+              </>
+            ))
+          }
+        </div>
+      </Container>
+    </section>
+
+    <section class="bg-zinc-100 py-10 dark:bg-zinc-800">
+      <Container class="space-y-8">
+        <H2>{t('work.learnings')}</H2>
+        <div class="grid grid-cols-[40px_1fr] items-center gap-y-4">
+          {
+            learnings.map((learning) => (
+              <>
+                <Dot size={32} className="text-red-500" />
+                <div>{learning}</div>
+              </>
+            ))
+          }
+        </div>
+      </Container>
+    </section>
+
+    <Container class="my-10 space-y-20">
+      <div class="space-y-8">
+        <H2>{t('work.techs')}</H2>
+        <ToolsCard tool={tools} />
+      </div>
+      <div class="space-y-8">
+        <H2>{t('work.overall')}</H2>
+        <p class="pe-10">
+          {t('mave.overall_desc')}
+        </p>
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-[60%_40%]">
+          <Image
+            class="aspect-video rounded-lg object-cover"
+            src={maveImage1}
+            alt="kart event"
+          />
+          <p>
+            {t('mave.overall_desc_2')}
+          </p>
+        </div>
+      </div>
+    </Container>
+  </div>
+</Layout>

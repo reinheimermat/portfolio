@@ -1,0 +1,162 @@
+---
+import { Image } from 'astro:assets'
+import bannerProjectiva from '../../../../public/banner-projectiva.jpg'
+import Container from '../../../components/container.astro'
+import Layout from '../../../layouts/Layout.astro'
+import H2 from '../../../components/ui/h2.astro'
+import ToolsCard from '@/components/tools-card.astro'
+import NextjsIcon from '@/components/icons/next-js-icon'
+import TypeScriptIcon from '@/components/icons/typescript-icon'
+import TailwindIcon from '@/components/icons/tailwind-icon'
+import HookFormIcon from '@/components/icons/hookform-icon'
+import ZodIcon from '@/components/icons/zod-icons'
+import JavaScriptIcon from '@/components/icons/javascript-icon'
+import VitestIcon from '@/components/icons/vitest-icon'
+import PlaywrightIcon from '@/components/icons/play-wright-icon'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import ProjectivaIcon from 'public/projectiva-icon'
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'pt_br' } },
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+  ]
+}
+
+const tools = [
+  {
+    name: 'Next.js',
+    icon: NextjsIcon,
+  },
+  {
+    name: 'TypeScript',
+    icon: TypeScriptIcon,
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: TailwindIcon,
+  },
+  {
+    name: 'React Hook Form',
+    icon: HookFormIcon,
+  },
+  {
+    name: 'Zod',
+    icon: ZodIcon,
+  },
+  {
+    name: 'JavaScript',
+    icon: JavaScriptIcon,
+  },
+  {
+    name: 'Vitest',
+    icon: VitestIcon,
+  },
+  {
+    name: 'Playwright',
+    icon: PlaywrightIcon,
+  },
+]
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const impacts = [
+  t('unesc.impact_1'),
+  t('unesc.impact_2'),
+  t('unesc.impact_3'),
+  t('unesc.impact_4'),
+  t('unesc.impact_5'),
+]
+---
+
+<Layout>
+  <div class="my-24">
+    <div
+      class="relative h-[39.25rem] w-full bg-zinc-100 dark:bg-zinc-800/30"
+      transition:name={'image-projectiva'}
+    >
+      <div class="absolute inset-0 flex items-center justify-center">
+        <ProjectivaIcon />
+      </div>
+    </div>
+
+    <Container class="my-10 space-y-10">
+      <div class="space-y-6">
+        <h2 class="text-xl font-bold">
+          {t('unesc.title')}
+        </h2>
+        <p>{t('unesc.desc')}</p>
+      </div>
+      <div class="flex items-start justify-between">
+        <div>
+          <strong>{t('work.position')}</strong>
+          <p>Frontend Developer</p>
+        </div>
+        <div>
+          <strong>{t('work.customer')}</strong>
+          <p>Unesc</p>
+        </div>
+        <div>
+          <strong>{t('work.timeline')}</strong>
+          <p>
+            {t('unesc.timeline')}
+          </p>
+        </div>
+        <div>
+          <strong>{t('work.level')}</strong>
+          <p>
+            {t('unesc.level_mid')}
+          </p>
+        </div>
+      </div>
+    </Container>
+
+    <section class="bg-zinc-800 text-zinc-100 dark:bg-zinc-700">
+      <Container class="space-y-8 py-10">
+        <H2>My Impact</H2>
+        <div class="grid grid-cols-[40px_1fr] items-start gap-y-4">
+          {
+            impacts.map((impact, index) => (
+              <>
+                <span class="text-muted-foreground font-serif">
+                  0{index + 1}
+                </span>
+                <div>{impact}</div>
+              </>
+            ))
+          }
+        </div>
+      </Container>
+    </section>
+
+    <section class="bg-zinc-100 py-10 dark:bg-zinc-800">
+      <Container class="space-y-8">
+        <H2>Project Structure</H2>
+        <pre
+          class="text-zinc-700 dark:text-zinc-300">
+src/
+├── app/
+│   ├── (private)
+│   │   └── dashboard/
+│   ├── (public)
+│   │   └── sign-in/
+│   └── layout.tsx
+├── components/
+├── lib/
+│   └── utils.ts
+├── types/
+│   └── api.ts
+├── hooks/
+        </pre>
+      </Container>
+    </section>
+
+    <Container class="my-10 space-y-8">
+      <H2>Technologies</H2>
+
+      <ToolsCard tool={tools} />
+    </Container>
+  </div>
+</Layout>

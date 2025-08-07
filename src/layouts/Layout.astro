@@ -1,0 +1,86 @@
+---
+import { Header } from '@/components/header'
+import '../styles/global.css'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import '@fontsource-variable/inter'
+import '@fontsource-variable/playfair-display'
+import { ClientRouter } from 'astro:transitions'
+import Footer from '@/components/footer.astro'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const navItems = [
+  {
+    name: t('nav.work'),
+    link: `/${lang}`,
+  },
+  {
+    name: t('nav.about'),
+    link: `/${lang}/about`,
+  },
+  {
+    name: t('nav.tools'),
+    link: `/${lang}/tools`,
+  },
+  {
+    name: t('nav.resume'),
+    link: `/${lang}/resume`,
+  },
+]
+---
+
+<script is:inline>
+  function setDarkMode(document) {
+    const getThemePreference = () => {
+      if (
+        typeof localStorage !== 'undefined' &&
+        localStorage.getItem('theme')
+      ) {
+        return localStorage.getItem('theme')
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'theme-light'
+    }
+    const isDark = getThemePreference() === 'dark'
+    document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
+
+    if (typeof localStorage !== 'undefined') {
+      const observer = new MutationObserver(() => {
+        const isDark = document.documentElement.classList.contains('dark')
+        localStorage.setItem('theme', isDark ? 'dark' : 'theme-light')
+      })
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class'],
+      })
+    }
+  }
+
+  setDarkMode(document)
+
+  document.addEventListener('astro:before-swap', (ev) => {
+    setDarkMode(ev.newDocument)
+  })
+</script>
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Matheus Reinheimer</title>
+    <ClientRouter />
+  </head>
+  <body
+    class="bg-zinc-50 !p-0 text-zinc-800 antialiased dark:bg-zinc-900 dark:text-zinc-100"
+  >
+    <div class="flex min-h-screen flex-col justify-between text-base">
+      <Header client:only items={navItems} buttonText={t('nav.resume')} />
+      <slot />
+      <Footer />
+    </div>
+  </body>
+</html>

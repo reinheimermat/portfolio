@@ -1,0 +1,27 @@
+---
+import type { ReactNode } from 'react'
+
+interface Props {
+  tool: {
+    name: string
+    icon: (props: React.SVGProps<SVGSVGElement>) => ReactNode
+  }[]
+}
+
+const { tool }: Props = Astro.props
+---
+
+<section
+  class="grid grid-cols-2 gap-x-10 gap-y-4 md:grid-cols-4 xl:grid-cols-5"
+>
+  {
+    tool.map((tech) => (
+      <div class="flex w-full items-center gap-2 rounded-xl bg-zinc-100 p-2 dark:bg-zinc-800">
+        <div class="rounded-lg bg-zinc-200 p-2 dark:bg-zinc-700">
+          <tech.icon />
+        </div>
+        <p class="text-sm">{tech.name}</p>
+      </div>
+    ))
+  }
+</section>

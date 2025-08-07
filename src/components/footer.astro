@@ -1,0 +1,53 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
+const year = new Date().getFullYear()
+
+const links = [
+  {
+    name: 'Email',
+    url: 'mailto:mreinheimer0@gmail.com',
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/reinheimermat',
+  },
+  {
+    name: 'GitHub',
+    url: 'https://github.com/reinheimermat.png',
+  },
+]
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<footer class="px-4 md:px-10">
+  <div
+    class="rounded-xl rounded-b-none border border-b-0 border-zinc-200 bg-zinc-100 text-center dark:border-zinc-800 dark:bg-zinc-900"
+  >
+    <div class="mx-auto max-w-[64rem] space-y-20 px-4 pt-10 pb-12">
+      <p class="font-serif font-bold text-black md:text-xl">
+        👋 {t('footer.title')}
+      </p>
+
+      <div class="grid grid-cols-2 items-end justify-between">
+        <div class="flex flex-col text-start text-sm">
+          <p>mreinheimer0@gmail.com</p>
+          <p>This website is best viewed on desktop</p>
+          <p>Made with Astro JS @{year} Matheus Reinheimer</p>
+        </div>
+
+        <div class="space-x-4 text-end text-sm">
+          {
+            links.map((link) => (
+              <a href={link.url} class="hover:underline">
+                {link.name}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

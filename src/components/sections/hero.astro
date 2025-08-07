@@ -1,0 +1,51 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import { FlipWords } from '@/components/ui/flip-words'
+import HeroLink from '@/components/hero-link.astro'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const words = ['betters', 'moderns', 'elegants']
+---
+
+<div class="grid items-center gap-24 md:grid-cols-2">
+  <div class="space-y-6">
+    <h1 class="text-2xl">
+      {t('home.title')}
+      <span class="font-bold">{t('home.title_span')}</span>
+      {t('home.title_span_2')}
+      <FlipWords words={words} client:load />
+      {t('home.title_span_3')}
+    </h1>
+    <div>
+      <HeroLink
+        title={t('home.desc_1')}
+        href="https://www.projectivaholding.com.br/"
+        target="_blank"
+        description="Projectiva Holding"
+      />
+
+      <HeroLink
+        title={t('home.desc_2')}
+        href="https://www.linkedin.com/in/reinheimermat/"
+        target="_blank"
+        description="LinkedIn"
+      />
+
+      <HeroLink
+        title={t('home.desc_2')}
+        href="https://www.github.com/reinheimermat"
+        target="_blank"
+        description="GitHub"
+      />
+    </div>
+  </div>
+  <div>
+    <img
+      src="https://github.com/reinheimermat.png"
+      alt=""
+      class="ms-auto w-52 rounded-full"
+    />
+  </div>
+</div>

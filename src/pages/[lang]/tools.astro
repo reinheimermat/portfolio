@@ -1,0 +1,217 @@
+---
+import Container from '@/components/container.astro'
+import Layout from '@/layouts/Layout.astro'
+import H2 from '@/components/ui/h2.astro'
+import ReactIcon from '@/components/icons/react-icon'
+import JavaScript from '@/components/icons/javascript-icon'
+import TypeScriptIcon from '@/components/icons/typescript-icon'
+import NextjsIcon from '@/components/icons/next-js-icon'
+import ShadcnIcon from '@/components/icons/shadcn-icon'
+import TailwindIcon from '@/components/icons/tailwind-icon'
+import HTMLIcon from '@/components/icons/html-icon'
+import CSSIcon from '@/components/icons/css-icon'
+import RadixUI from '@/components/icons/radix-ui-icon'
+import FramerIcon from '@/components/icons/framer-icon'
+import TanStackIcon from '@/components/icons/tanstack-icon'
+import ViteIcon from '@/components/icons/vite-icon'
+import NodeIcon from '@/components/icons/node-icon'
+import PrismaIcon from '@/components/icons/prisma-icon'
+import FastifyIcon from '@/components/icons/fastify-icon'
+import PostgresSQLIcon from '@/components/icons/postgres-icon'
+import DockerIcon from '@/components/icons/docker-icon'
+import GithubIcon from '@/components/icons/github-icon'
+import VercelIcon from '@/components/icons/vercel-icon'
+import SupabaseIcon from '@/components/icons/supabase-icon'
+import GitIcon from '@/components/icons/git-icon'
+import LinuxIcon from '@/components/icons/linux-icon'
+import CypressIcon from '@/components/icons/cypress-icon'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import PlaywrightIcon from '@/components/icons/play-wright-icon'
+import FirebaseIcon from '@/components/icons/firebase-icon'
+import MongoIcon from '@/components/icons/mongo-icon'
+import VitestIcon from '@/components/icons/vitest-icon'
+import JestIcon from '@/components/icons/jest-icon'
+import RubyIcon from '@/components/icons/ruby-icon'
+import RailsIcon from '@/components/icons/rails-icon'
+import RSpecIcon from '@/components/icons/rspec-icon'
+import BootstrapIcon from '@/components/icons/bootstrap-icon'
+import ToolsCard from '@/components/tools-card.astro'
+import MarkdownIcon from '@/components/icons/markdown-icon'
+import SwaggerIcon from '@/components/icons/swagger-icon'
+import StorybookIcon from '@/components/icons/storybook-icon'
+import PerplexityIcon from '@/components/icons/perplexity-icon'
+import GithubCopilotIcon from '@/components/icons/github-copilot-icon'
+import V0Icon from '@/components/icons/v0-icon'
+import N8NIcon from '@/components/icons/n8n-icon'
+import ZodIcon from '@/components/icons/zod-icons'
+import AstroIcon from '@/components/icons/astro-icon'
+import BotconversaIcon from '@/components/icons/botconversa-icon'
+import MakeIcon from '@/components/icons/make-icon'
+import AWSIcon from '@/components/icons/aws-icon'
+import VSCodeIcon from '@/components/icons/vscode-icon'
+import FedoraIcon from '@/components/icons/fedora-icon'
+import TanstackQueryIcon from '@/components/icons/tanstack-query-icon'
+import GraphQLIcon from '@/components/icons/graphql-icon'
+import FigmaIcon from '@/components/icons/figma-icon'
+import TRPCIcon from '@/components/icons/trpc-icon'
+import RedisIcon from '@/components/icons/redis-icon'
+import AlacrittyIcon from '@/components/icons/alacritty-icon'
+import NotionIcon from '@/components/icons/notion-icon'
+import DiscordIcon from '@/components/icons/discord-icon'
+import PostmanIcon from '@/components/icons/postman-icon'
+import HookFormIcon from '@/components/icons/hookform-icon'
+
+export const getStaticPaths = () => {
+  return [{ params: { lang: 'en' } }, { params: { lang: 'pt' } }]
+}
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
+const frontend = [
+  { name: 'React', icon: ReactIcon },
+  { name: 'CSS', icon: CSSIcon },
+  { name: 'HTML', icon: HTMLIcon },
+  { name: 'React.js', icon: ReactIcon },
+  { name: 'JavaScript', icon: JavaScript },
+  { name: 'TypeScript', icon: TypeScriptIcon },
+  { name: 'Next.js', icon: NextjsIcon },
+  { name: 'ShadCn UI', icon: ShadcnIcon },
+  { name: 'Tailwind CSS', icon: TailwindIcon },
+  { name: 'Radix UI', icon: RadixUI },
+  { name: 'Framer', icon: FramerIcon },
+  { name: 'Tanstack', icon: TanStackIcon },
+  { name: 'React Query', icon: TanstackQueryIcon },
+  { name: 'Vite', icon: ViteIcon },
+  { name: 'Bootstrap', icon: BootstrapIcon },
+  { name: 'Zod', icon: ZodIcon },
+  { name: 'React Hook Form', icon: HookFormIcon },
+  { name: 'Astro.js', icon: AstroIcon },
+]
+
+const backend = [
+  { name: 'Node.js', icon: NodeIcon },
+  {
+    name: 'Prisma ORM',
+    icon: PrismaIcon,
+  },
+  { name: 'JavaScript', icon: JavaScript },
+  { name: 'TypeScript', icon: TypeScriptIcon },
+  { name: 'Fastify', icon: FastifyIcon },
+  { name: 'Linux', icon: LinuxIcon },
+  { name: 'Ruby', icon: RubyIcon },
+  { name: 'Ruby on Rails', icon: RailsIcon },
+  { name: 'Zod', icon: ZodIcon },
+  { name: 'GraphQL', icon: GraphQLIcon },
+  { name: 'tRPC', icon: TRPCIcon },
+  { name: 'Postman', icon: PostmanIcon },
+]
+
+const database = [
+  { name: 'PostgreSQL', icon: PostgresSQLIcon },
+  { name: 'Supabase', icon: SupabaseIcon },
+  { name: 'Firebase', icon: FirebaseIcon },
+  { name: 'MongoDB', icon: MongoIcon },
+  { name: 'Redis', icon: RedisIcon },
+]
+
+const infra = [
+  { name: 'Docker', icon: DockerIcon },
+  { name: 'Github Actions', icon: GithubIcon },
+  { name: 'Vercel', icon: VercelIcon },
+  { name: 'AWS', icon: AWSIcon },
+  { name: 'Linux', icon: LinuxIcon },
+]
+
+const versionamento = [
+  { name: 'Git', icon: GitIcon },
+  { name: 'Github', icon: GithubIcon },
+]
+
+const tests = [
+  { name: 'Vitest', icon: VitestIcon },
+  { name: 'Jest', icon: JestIcon },
+  { name: 'Cypress', icon: CypressIcon },
+  { name: 'Playwright', icon: PlaywrightIcon },
+  { name: 'RSpec', icon: RSpecIcon },
+]
+
+const documentation = [
+  { name: 'Markdown', icon: MarkdownIcon },
+  { name: 'Swagger', icon: SwaggerIcon },
+  { name: 'StoryBook', icon: StorybookIcon },
+]
+
+const ai = [
+  { name: 'Perplexity', icon: PerplexityIcon },
+  {
+    name: 'Github Copilot',
+    icon: GithubCopilotIcon,
+  },
+  {
+    name: 'Vercel V0',
+    icon: V0Icon,
+  },
+  {
+    name: 'N8N',
+    icon: N8NIcon,
+  },
+  {
+    name: 'Botconversa',
+    icon: BotconversaIcon,
+  },
+  {
+    name: 'Make',
+    icon: MakeIcon,
+  },
+]
+
+const setup = [
+  { name: 'VS Code', icon: VSCodeIcon },
+  { name: 'Fedora Linux', icon: FedoraIcon },
+  { name: 'Figma', icon: FigmaIcon },
+  { name: 'Alacritty', icon: AlacrittyIcon },
+  { name: 'Notion', icon: NotionIcon },
+  { name: 'Discord', icon: DiscordIcon },
+]
+---
+
+<Layout>
+  <Container class="my-40 space-y-8">
+    <H2>{t('techs.front')}</H2>
+
+    <ToolsCard tool={frontend} />
+
+    <H2>{t('techs.back')}</H2>
+
+    <ToolsCard tool={backend} />
+
+    <H2>{t('techs.tests')}</H2>
+
+    <ToolsCard tool={tests} />
+
+    <H2>{t('techs.documentation')}</H2>
+
+    <ToolsCard tool={documentation} />
+
+    <H2>{t('techs.database')}</H2>
+
+    <ToolsCard tool={database} />
+
+    <H2>{t('techs.ai')}</H2>
+
+    <ToolsCard tool={ai} />
+
+    <H2>{t('techs.infra')}</H2>
+
+    <ToolsCard tool={infra} />
+
+    <H2>{t('techs.versioning')}</H2>
+
+    <ToolsCard tool={versionamento} />
+
+    <H2>{t('techs.setup')}</H2>
+
+    <ToolsCard tool={setup} />
+  </Container>
+</Layout>
