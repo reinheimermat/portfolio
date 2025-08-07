@@ -1,7 +1,4 @@
 ---
-import { Image } from 'astro:assets'
-import mave from '../../../public/mave-cover.jpg'
-import projectiva from '../../../public/projectiva-cover.jpg'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 import { Card } from '../ui/card'
 import ReactIcon from '@/components/icons/react-icon'
@@ -13,14 +10,15 @@ import JavaScriptIcon from '@/components/icons/javascript-icon'
 import RadixUI from '@/components/icons/radix-ui-icon'
 import { Badge } from '../ui/badge'
 import H2 from '../ui/h2.astro'
-import minBlog from '../../../public/minblog-cover.jpg'
 import RailsIcon from '../icons/rails-icon'
 import RubyIcon from '../icons/ruby-icon'
 import RSpecIcon from '../icons/rspec-icon'
-import n8NCover from '../../../public/n8n-cover.jpg'
 import N8NIcon from '../icons/n8n-icon'
 import RedisIcon from '../icons/redis-icon'
 import GeminiIcon from '../icons/gemini-icon'
+import MaveIcon from 'public/mave-icon'
+import ProjectivaIcon from 'public/projectiva-icon'
+import MinBlogIcon from 'public/min-blog-icon'
 
 const formatHref = (title: string) => {
   return title.toLowerCase()
@@ -34,7 +32,9 @@ const work = [
     title: t('work.role'),
     subtitle: 'Projectiva Holding',
     label: 'Projectiva',
-    src: projectiva,
+    icon: ProjectivaIcon,
+    height: 87,
+    width: 312,
     techs: [
       {
         name: 'React.js',
@@ -70,7 +70,9 @@ const work = [
     title: t('work.role'),
     subtitle: 'Mave Tecnologia',
     label: 'Mave',
-    src: mave,
+    icon: MaveIcon,
+    height: 170,
+    width: 170,
     techs: [
       {
         name: 'React.js',
@@ -98,7 +100,9 @@ const work = [
     title: 'Min Blog API',
     subtitle: 'Back-end project',
     label: 'min-blog-api',
-    src: minBlog,
+    icon: MinBlogIcon,
+    height: 200,
+    width: 200,
     techs: [
       {
         name: 'Ruby',
@@ -118,7 +122,9 @@ const work = [
     title: 'Barbershop AI Agent',
     subtitle: 'AI Agent Development',
     label: 'barbershop-ai-agent',
-    src: n8NCover,
+    icon: N8NIcon,
+    height: 170,
+    width: 170,
     techs: [
       {
         name: 'N8N',
@@ -151,14 +157,14 @@ const work = [
       work.map((job) => (
         <Card.Root>
           <a href={`/${lang}/work/${formatHref(job.label)}`} class="block">
-            <Image
-              src={job.src}
-              alt={job.title}
-              class="aspect-video w-full rounded-xl object-cover"
-              width={500}
-              height={400}
+            <div
+              class="relative h-[272px] w-full rounded-xl bg-zinc-100 dark:bg-zinc-800"
               transition:name={`image-${formatHref(job.label)}`}
-            />
+            >
+              <div class="absolute inset-0 flex items-center justify-center">
+                <job.icon height={job.height} width={job.width} />
+              </div>
+            </div>
           </a>
           <Card.Container>
             <div class="space-y-4">

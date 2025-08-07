@@ -1,9 +1,14 @@
-const MaveIcon = () => (
+interface Props {
+  height?: number;
+  width?: number;
+}
+
+const MaveIcon = ({ height, width }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    width="250"
-    height="250"
+    width={width || 250}
+    height={height || 250}
     fill="none"
     viewBox="0 0 250 250"
   >

@@ -1,8 +1,13 @@
-const N8NIcon = () => (
+interface Props {
+  height?: number;
+  width?: number;
+}
+
+const N8NIcon = ({ height, width }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
+    width={width || "1em"}
+    height={height || "1em"}
     style={{ flex: "none", lineHeight: "1" }}
     viewBox="0 0 24 24"
   >

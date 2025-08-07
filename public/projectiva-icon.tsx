@@ -1,9 +1,14 @@
-const ProjectivaIcon = () => (
+interface Props {
+  height?: number;
+  width?: number;
+}
+
+const ProjectivaIcon = ({ height, width }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    width="659"
-    height="177"
+    width={width || 659}
+    height={height || 177}
     fill="none"
     viewBox="0 0 659 177"
   >

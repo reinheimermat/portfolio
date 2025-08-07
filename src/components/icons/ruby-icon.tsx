@@ -1,12 +1,15 @@
-import type { SVGProps } from "react";
-const RubyIcon = (props: SVGProps<SVGSVGElement>) => (
+interface Props {
+  height?: number;
+  width?: number;
+}
+
+const RubyIcon = ({ height, width }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMidYMid"
     viewBox="0 0 256 255"
-    width="1em"
-    height="1em"
-    {...props}
+    width={width || "1em"}
+    height={height || "1em"}
   >
     <title>
       Ruby Icon - A dynamic, open source programming language with a focus on
