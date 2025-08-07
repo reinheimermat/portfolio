@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets'
-import bannerProjectiva from '../../../../public/banner-projectiva.jpg'
 import Container from '../../../components/container.astro'
 import Layout from '../../../layouts/Layout.astro'
 import H2 from '../../../components/ui/h2.astro'
@@ -15,6 +13,7 @@ import VitestIcon from '@/components/icons/vitest-icon'
 import PlaywrightIcon from '@/components/icons/play-wright-icon'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 import ProjectivaIcon from 'public/projectiva-icon'
+import { Dot } from 'lucide-react'
 
 export function getStaticPaths() {
   return [
@@ -84,9 +83,9 @@ const impacts = [
 
     <Container class="my-10 space-y-10">
       <div class="space-y-6">
-        <h2 class="text-xl font-bold">
+        <H2>
           {t('unesc.title')}
-        </h2>
+        </H2>
         <p>{t('unesc.desc')}</p>
       </div>
       <div class="flex items-start justify-between">
@@ -115,14 +114,12 @@ const impacts = [
 
     <section class="bg-zinc-800 text-zinc-100 dark:bg-zinc-700">
       <Container class="space-y-8 py-10">
-        <H2>My Impact</H2>
-        <div class="grid grid-cols-[40px_1fr] items-start gap-y-4">
+        <H2>{t('work.impact')}</H2>
+        <div class="grid grid-cols-[40px_1fr] items-center gap-y-4">
           {
-            impacts.map((impact, index) => (
+            impacts.map((impact) => (
               <>
-                <span class="text-muted-foreground font-serif">
-                  0{index + 1}
-                </span>
+                <Dot size={32} className="text-red-500" />
                 <div>{impact}</div>
               </>
             ))

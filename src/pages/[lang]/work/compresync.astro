@@ -1,7 +1,4 @@
 ---
-import { Image } from 'astro:assets'
-import bannerProjectiva from '../../../../public/banner-projectiva.jpg'
-import bannerMave from '../../../../public/banner-mave.jpg'
 import Container from '../../../components/container.astro'
 import Layout from '../../../layouts/Layout.astro'
 import H2 from '../../../components/ui/h2.astro'
@@ -15,10 +12,11 @@ import JavaScriptIcon from '@/components/icons/javascript-icon'
 import VitestIcon from '@/components/icons/vitest-icon'
 import PlaywrightIcon from '@/components/icons/play-wright-icon'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import ProjectivaIcon from 'public/projectiva-icon'
 import { Dot } from 'lucide-react'
-import maveImage1 from '../../../../public/mave-kart.jpg'
-import MaveIcon from '../../../../public/mave-icon.tsx'
-import { LinkPreview } from '@/components/ui/link-preview'
+import { Image } from 'astro:assets'
+import dashboard from 'public/dashboard.jpg'
+import dashboard2 from 'public/dashboard2.jpg'
 
 export function getStaticPaths() {
   return [
@@ -42,7 +40,7 @@ const tools = [
     icon: TailwindIcon,
   },
   {
-    name: 'Hook Form',
+    name: 'React Hook Form',
     icon: HookFormIcon,
   },
   {
@@ -67,72 +65,61 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
 const impacts = [
-  t('mave.impact_1'),
-  t('mave.impact_2'),
-  t('mave.impact_3'),
-  t('mave.impact_4'),
-  t('mave.impact_5'),
+  t('compresync.impact_1'),
+  t('compresync.impact_2'),
+  t('compresync.impact_3'),
+  t('compresync.impact_4'),
+  t('compresync.impact_5'),
 ]
 
 const learnings = [
-  t('mave.learning_1'),
-  t('mave.learning_2'),
-  t('mave.learning_3'),
-  t('mave.learning_4'),
-  t('mave.learning_5'),
+  t('compresync.learning_1'),
+  t('compresync.learning_2'),
+  t('compresync.learning_3'),
+  t('compresync.learning_4'),
+  t('compresync.learning_5'),
 ]
 ---
 
 <Layout>
   <div class="my-24">
     <div
-      class="relative aspect-square w-full bg-zinc-100 md:aspect-video xl:aspect-auto xl:h-[39.25rem] dark:bg-zinc-800/30"
-      transition:name={'image-mave'}
+      class="relative h-[39.25rem] w-full bg-zinc-100 dark:bg-zinc-800/30"
+      transition:name={'image-selco'}
     >
       <div class="absolute inset-0 flex items-center justify-center">
-        <MaveIcon />
+        <ProjectivaIcon />
       </div>
     </div>
 
     <Container class="my-10 space-y-10">
       <div class="space-y-6">
-        <h2 class="font-serif text-xl font-bold">
-          {t('mave.title')}
-        </h2>
-        <div class="space-y-2 md:pe-10">
-          <p>
-            {t('mave.desc_p1')}
-          </p>
-          <p>
-            {t('mave.desc_p2')}
-          </p>
-        </div>
+        <H2>
+          {t('compresync.title')}
+        </H2>
+        <p>{t('compresync.desc')}</p>
       </div>
-      <div
-        class="grid grid-cols-2 items-start justify-between gap-6 md:flex md:gap-0"
-      >
+      <div class="flex items-start justify-between">
         <div>
           <strong>{t('work.position')}</strong>
-          <p>{t('work.role')}</p>
-        </div>
-        <div class="w-fit">
-          <strong>{t('work.projects')}</strong>
           <p>
-            Gremio Website <br /> Mave Website <br /> ACBF Website
+            {t('work.role')}
           </p>
+        </div>
+        <div>
+          <strong>{t('work.customer')}</strong>
+          <p>Selco</p>
         </div>
         <div>
           <strong>{t('work.timeline')}</strong>
           <p>
-            {t('mave.start')} - {t('mave.end')}
-            <br />
-            {t('mave.time')}
+            {t('compresync.timeline')}
           </p>
         </div>
         <div>
           <strong>{t('work.level')}</strong>
           <p>
-            {t('mave.level')}
+            {t('compresync.level')}
           </p>
         </div>
       </div>
@@ -176,19 +163,22 @@ const learnings = [
         <ToolsCard tool={tools} />
       </div>
       <div class="space-y-8">
-        <H2>{t('work.overall')}</H2>
-        <p class="pe-10">
-          {t('mave.overall_desc')}
-        </p>
-        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-[60%_40%]">
+        <H2>{t('work.gallery')}</H2>
+        <div class="grid gap-4 md:grid-cols-2">
           <Image
-            class="aspect-video rounded-lg object-cover"
-            src={maveImage1}
-            alt="kart event"
+            class="h-[330px] w-full rounded-lg object-cover ring-1 ring-zinc-200 dark:ring-zinc-800"
+            src={dashboard}
+            alt="dashboard"
+            height={325}
+            width={488}
           />
-          <p>
-            {t('mave.overall_desc_2')}
-          </p>
+          <Image
+            class="h-[330px] w-full rounded-lg object-cover ring-1 ring-zinc-200 dark:ring-zinc-800"
+            src={dashboard2}
+            alt="dashboard"
+            height={325}
+            width={488}
+          />
         </div>
       </div>
     </Container>

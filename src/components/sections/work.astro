@@ -7,7 +7,6 @@ import NextjsIcon from '@/components/icons/next-js-icon'
 import NodeIcon from '@/components/icons/node-icon'
 import ShadCnIcon from '@/components/icons/shadcn-icon'
 import JavaScriptIcon from '@/components/icons/javascript-icon'
-import RadixUI from '@/components/icons/radix-ui-icon'
 import { Badge } from '../ui/badge'
 import H2 from '../ui/h2.astro'
 import RailsIcon from '../icons/rails-icon'
@@ -19,6 +18,7 @@ import GeminiIcon from '../icons/gemini-icon'
 import MaveIcon from 'public/mave-icon'
 import ProjectivaIcon from 'public/projectiva-icon'
 import MinBlogIcon from 'public/min-blog-icon'
+import ReactQueryIcon from '../icons/tanstack-query-icon'
 
 const formatHref = (title: string) => {
   return title.toLowerCase()
@@ -29,8 +29,8 @@ const t = useTranslations(lang)
 
 const work = [
   {
-    title: t('work.role'),
-    subtitle: 'Projectiva Holding',
+    title: 'HelpDesk Platform',
+    subtitle: `Projectiva Holding | ${t('work.role')}`,
     label: 'Unesc',
     icon: ProjectivaIcon,
     height: 87,
@@ -61,8 +61,46 @@ const work = [
         icon: ShadCnIcon,
       },
       {
-        name: 'Radix UI',
-        icon: RadixUI,
+        name: 'React Query',
+        icon: ReactQueryIcon,
+      },
+    ],
+  },
+  {
+    title: 'Compressors Management System',
+    subtitle: `Projectiva Holding | ${t('work.role')}`,
+    label: 'compresync',
+    icon: ProjectivaIcon,
+    height: 87,
+    width: 312,
+    techs: [
+      {
+        name: 'React.js',
+        icon: ReactIcon,
+      },
+      {
+        name: 'TypeScript',
+        icon: TypeScriptIcon,
+      },
+      {
+        name: 'Next.js',
+        icon: NextjsIcon,
+      },
+      {
+        name: 'Node.js',
+        icon: NodeIcon,
+      },
+      {
+        name: 'JavaScript',
+        icon: JavaScriptIcon,
+      },
+      {
+        name: 'ShadCn UI',
+        icon: ShadCnIcon,
+      },
+      {
+        name: 'React Query',
+        icon: ReactQueryIcon,
       },
     ],
   },
