@@ -31,9 +31,6 @@ import FirebaseIcon from '@/components/icons/firebase-icon'
 import MongoIcon from '@/components/icons/mongo-icon'
 import VitestIcon from '@/components/icons/vitest-icon'
 import JestIcon from '@/components/icons/jest-icon'
-import RubyIcon from '@/components/icons/ruby-icon'
-import RailsIcon from '@/components/icons/rails-icon'
-import RSpecIcon from '@/components/icons/rspec-icon'
 import BootstrapIcon from '@/components/icons/bootstrap-icon'
 import ToolsCard from '@/components/tools-card.astro'
 import MarkdownIcon from '@/components/icons/markdown-icon'
@@ -60,6 +57,11 @@ import NotionIcon from '@/components/icons/notion-icon'
 import DiscordIcon from '@/components/icons/discord-icon'
 import PostmanIcon from '@/components/icons/postman-icon'
 import HookFormIcon from '@/components/icons/hookform-icon'
+import NestJSIcon from '@/components/icons/nest-icon'
+import DrizzleORMIcon from '@/components/icons/drizzle-icon'
+import BiomeIcon from '@/components/icons/biome-icon'
+import ExpoIcon from '@/components/icons/expo-icon'
+import TestingLibraryIcon from '@/components/icons/testing-library'
 
 export const getStaticPaths = () => {
   return [{ params: { lang: 'en' } }, { params: { lang: 'pt' } }]
@@ -69,42 +71,51 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
 const frontend = [
-  { name: 'React', icon: ReactIcon },
-  { name: 'CSS', icon: CSSIcon },
-  { name: 'HTML', icon: HTMLIcon },
   { name: 'React.js', icon: ReactIcon },
+  { name: 'Next.js', icon: NextjsIcon },
+  { name: 'Astro.js', icon: AstroIcon },
   { name: 'JavaScript', icon: JavaScript },
   { name: 'TypeScript', icon: TypeScriptIcon },
-  { name: 'Next.js', icon: NextjsIcon },
-  { name: 'ShadCn UI', icon: ShadcnIcon },
+  { name: 'Vite', icon: ViteIcon },
+  { name: 'React Hook Form', icon: HookFormIcon },
+  { name: 'React Query', icon: TanstackQueryIcon },
+  { name: 'Tanstack', icon: TanStackIcon },
+  { name: 'Zod', icon: ZodIcon },
+  { name: 'HTML', icon: HTMLIcon },
+  { name: 'CSS', icon: CSSIcon },
   { name: 'Tailwind CSS', icon: TailwindIcon },
   { name: 'Radix UI', icon: RadixUI },
-  { name: 'Framer', icon: FramerIcon },
-  { name: 'Tanstack', icon: TanStackIcon },
-  { name: 'React Query', icon: TanstackQueryIcon },
-  { name: 'Vite', icon: ViteIcon },
+  { name: 'ShadCn UI', icon: ShadcnIcon },
   { name: 'Bootstrap', icon: BootstrapIcon },
-  { name: 'Zod', icon: ZodIcon },
-  { name: 'React Hook Form', icon: HookFormIcon },
-  { name: 'Astro.js', icon: AstroIcon },
+  { name: 'Framer', icon: FramerIcon },
+  { name: 'Biome', icon: BiomeIcon },
 ]
 
 const backend = [
   { name: 'Node.js', icon: NodeIcon },
-  {
-    name: 'Prisma ORM',
-    icon: PrismaIcon,
-  },
-  { name: 'JavaScript', icon: JavaScript },
-  { name: 'TypeScript', icon: TypeScriptIcon },
+  { name: 'NestJS', icon: NestJSIcon },
   { name: 'Fastify', icon: FastifyIcon },
-  { name: 'Linux', icon: LinuxIcon },
-  { name: 'Ruby', icon: RubyIcon },
-  { name: 'Ruby on Rails', icon: RailsIcon },
-  { name: 'Zod', icon: ZodIcon },
+  { name: 'TypeScript', icon: TypeScriptIcon },
+  { name: 'JavaScript', icon: JavaScript },
+  { name: 'Prisma ORM', icon: PrismaIcon },
+  { name: 'Drizzle ORM', icon: DrizzleORMIcon },
   { name: 'GraphQL', icon: GraphQLIcon },
   { name: 'tRPC', icon: TRPCIcon },
+  { name: 'Zod', icon: ZodIcon },
+  { name: 'Linux', icon: LinuxIcon },
   { name: 'Postman', icon: PostmanIcon },
+  { name: 'Biome', icon: BiomeIcon },
+]
+
+const mobile = [
+  { name: 'React Native', icon: ReactIcon },
+  { name: 'Expo', icon: ExpoIcon },
+  { name: 'TypeScript', icon: TypeScriptIcon },
+  { name: 'JavaScript', icon: JavaScript },
+  { name: 'React Hook Form', icon: HookFormIcon },
+  { name: 'React Query', icon: TanstackQueryIcon },
+  { name: 'Zod', icon: ZodIcon },
+  { name: 'Biome', icon: BiomeIcon },
 ]
 
 const database = [
@@ -133,7 +144,7 @@ const tests = [
   { name: 'Jest', icon: JestIcon },
   { name: 'Cypress', icon: CypressIcon },
   { name: 'Playwright', icon: PlaywrightIcon },
-  { name: 'RSpec', icon: RSpecIcon },
+  { name: 'Testing Library', icon: TestingLibraryIcon },
 ]
 
 const documentation = [
@@ -185,6 +196,10 @@ const setup = [
     <H2>{t('techs.back')}</H2>
 
     <ToolsCard tool={backend} />
+
+    <H2>{t('techs.mobile')}</H2>
+
+    <ToolsCard tool={mobile} />
 
     <H2>{t('techs.tests')}</H2>
 

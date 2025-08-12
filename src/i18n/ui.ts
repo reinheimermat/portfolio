@@ -52,6 +52,7 @@ export const ui = {
     'techs.tests': 'Tests',
     'techs.documentation': 'Documentation',
     'techs.ai': 'AI and Automation',
+    'techs.mobile': 'Mobile',
     'techs.setup': 'Environment and Tools Setup',
     'unesc.title': 'Helpdesk Platform',
     'unesc.desc':
@@ -145,6 +146,7 @@ export const ui = {
     'techs.tests': 'Testes',
     'techs.documentation': 'Documentação',
     'techs.ai': 'IA e Automação',
+    'techs.mobile': 'Mobile',
     'techs.setup': 'Configuração de Ambiente e Ferramentas',
     'unesc.title': 'Plataforma Helpdesk',
     'unesc.desc':
@@ -236,6 +238,7 @@ export const ui = {
     'techs.tests': 'Pruebas',
     'techs.documentation': 'Documentación',
     'techs.ai': 'IA y Automatización',
+    'techs.mobile': 'Móvil',
     'techs.setup': 'Configuración del Entorno y Herramientas',
     'unesc.title': 'Plataforma Helpdesk',
     'unesc.desc':
